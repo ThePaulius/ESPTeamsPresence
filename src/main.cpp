@@ -289,37 +289,48 @@ void setPresenceAnimation() {
 	// Activity: Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly
 
 	if (activity.equals("Available")) {
-		setAnimation(0, FX_MODE_STATIC, GREEN);
+		setAnimation(0, FX_MODE_STATIC, BLACK);
+		// No one needs to know if im avaliable, only when im not to be disturbed. ^PM
 	}
 	if (activity.equals("Away")) {
-		setAnimation(0, FX_MODE_STATIC, YELLOW);
+		setAnimation(0, FX_MODE_BREATH, YELLOW);
 	}
 	if (activity.equals("BeRightBack")) {
 		setAnimation(0, FX_MODE_STATIC, ORANGE);
 	}
 	if (activity.equals("Busy")) {
-		setAnimation(0, FX_MODE_STATIC, PURPLE);
+		//setAnimation(0, FX_MODE_STATIC, PURPLE);
+		setAnimation(0, FX_MODE_BREATH, ORANGE, 9000); 
+		//Shows when in a general meeting, so Red is too dramatic, Orange is lower priority to Red. ^PM
 	}
 	if (activity.equals("DoNotDisturb") || activity.equals("UrgentInterruptionsOnly")) {
-		setAnimation(0, FX_MODE_STATIC, PINK);
+		//setAnimation(0, FX_MODE_STATIC, PINK);
+		setAnimation(0, FX_MODE_BREATH, 0xFF8c00, 9000); //Orange
+		// Orange is lower priority to Red. ^PM
 	}
 	if (activity.equals("InACall")) {
-		setAnimation(0, FX_MODE_BREATH, RED);
+		//setAnimation(0, FX_MODE_BREATH, 0xFF0000);
+		setAnimation(0, FX_MODE_THEATER_CHASE, RED);
+		// If im actually on a call, I want my family downstairs to notice this is higher prioirty than static Red. ^PM
 	}
 	if (activity.equals("InAConferenceCall")) {
-		setAnimation(0, FX_MODE_BREATH, RED, 9000);
+		//setAnimation(0, FX_MODE_BREATH, RED, 9000);
+		setAnimation(0, FX_MODE_THEATER_CHASE, 0xFF0000);
+		// If im actually on a conference all, I want my family downstairs to notice this is higher prioirty than static Red. ^PM
 	}
 	if (activity.equals("Inactive")) {
 		setAnimation(0, FX_MODE_BREATH, WHITE);
 	}
 	if (activity.equals("InAMeeting")) {
-		setAnimation(0, FX_MODE_SCAN, RED);
+		//setAnimation(0, FX_MODE_SCAN, RED);
+		setAnimation(0, FX_MODE_BREATH, 0xFF0000);
+		// Often InAMeeting doesnt mean im actually on a Teams call. So Breathing Red is lower priority than Wipe Red. ^PM
 	}	
 	if (activity.equals("Offline") || activity.equals("OffWork") || activity.equals("OutOfOffice") || activity.equals("PresenceUnknown")) {
 		setAnimation(0, FX_MODE_STATIC, BLACK);
 	}
 	if (activity.equals("Presenting")) {
-		setAnimation(0, FX_MODE_COLOR_WIPE, RED);
+		setAnimation(0, FX_MODE_COLOR_WIPE, 0xFF0000);
 	}
 }
 
