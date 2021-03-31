@@ -310,11 +310,11 @@ void setPresenceAnimation() {
 	}
 	if (activity.equals("InACall")) {
 		//setAnimation(0, FX_MODE_BREATH, 0xFF0000);
-		setAnimation(0, FX_MODE_THEATER_CHASE, RED);
+		setAnimation(0, FX_MODE_THEATER_CHASE, 0xFF0000);
 		// If im actually on a call, I want my family downstairs to notice this is higher prioirty than static Red. ^PM
 	}
 	if (activity.equals("InAConferenceCall")) {
-		//setAnimation(0, FX_MODE_BREATH, RED, 9000);
+		//setAnimation(0, FX_MODE_LARSON_SCANNER, RED, 9000);
 		setAnimation(0, FX_MODE_THEATER_CHASE, 0xFF0000);
 		// If im actually on a conference all, I want my family downstairs to notice this is higher prioirty than static Red. ^PM
 	}
@@ -323,7 +323,7 @@ void setPresenceAnimation() {
 	}
 	if (activity.equals("InAMeeting")) {
 		//setAnimation(0, FX_MODE_SCAN, RED);
-		setAnimation(0, FX_MODE_BREATH, 0xFF0000);
+		setAnimation(0, FX_MODE_LARSON_SCANNER, 0xFF0000, 1000);
 		// Often InAMeeting doesnt mean im actually on a Teams call. So Breathing Red is lower priority than Wipe Red. ^PM
 	}	
 	if (activity.equals("Offline") || activity.equals("OffWork") || activity.equals("OutOfOffice") || activity.equals("PresenceUnknown")) {
